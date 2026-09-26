@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Products.css";
 
 function Products({ onNavigate }) {
@@ -6,72 +6,27 @@ function Products({ onNavigate }) {
   const [category, setCategory] = useState("All");
   const [showModal, setShowModal] = useState(false);
 
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Wireless Keyboard",
-      sku: "KB-001",
-      category: "Electronics",
-      price: 1299,
-      stock: 120,
-    },
-    {
-      id: 2,
-      name: "USB-C Cable",
-      sku: "CB-002",
-      category: "Accessories",
-      price: 499,
-      stock: 45,
-    },
-    {
-      id: 3,
-      name: "Office Chair",
-      sku: "CH-003",
-      category: "Furniture",
-      price: 7499,
-      stock: 32,
-    },
-    {
-      id: 4,
-      name: 'Monitor 24"',
-      sku: "MN-004",
-      category: "Electronics",
-      price: 12499,
-      stock: 18,
-    },
-    {
-      id: 5,
-      name: "Wireless Mouse",
-      sku: "MS-005",
-      category: "Accessories",
-      price: 899,
-      stock: 3,
-    },
-    {
-      id: 6,
-      name: "Laptop Stand",
-      sku: "LS-006",
-      category: "Accessories",
-      price: 1899,
-      stock: 12,
-    },
-    {
-      id: 7,
-      name: "HDMI Cable",
-      sku: "HD-007",
-      category: "Accessories",
-      price: 699,
-      stock: 5,
-    },
-    {
-      id: 8,
-      name: "Desk Lamp",
-      sku: "DL-008",
-      category: "Furniture",
-      price: 1599,
-      stock: 28,
-    },
-  ]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5001/api/products")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setProducts(
+            data.products.map((product) => ({
+              id: product._id,
+              name: product.name,
+              sku: product.sku,
+              category: product.category,
+              price: product.price || 0,
+              stock: product.stock,
+            }))
+          );
+        }
+      })
+      .catch((error) => console.error("Failed to load products:", error));
+  }, []);
 
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -120,16 +75,45 @@ function Products({ onNavigate }) {
       return;
     }
 
-    const product = {
-      id: Date.now(),
-      name: newProduct.name,
-      sku: newProduct.sku,
-      category: newProduct.category,
-      price: Number(newProduct.price),
-      stock: Number(newProduct.stock),
-    };
-
-    setProducts([...products, product]);
+    fetch("http://localhost:5001/api/products", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: newProduct.name,
+        sku: newProduct.sku,
+        category: newProduct.category,
+        unit: "pcs",
+        stock: Number(newProduct.stock),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          const product = {
+            id: data.product._id,
+            name: data.product.name,
+            sku: data.product.sku,
+            category: data.product.category,
+            price: Number(newProduct.price),
+            stock: data.product.stock,
+          };
+          setProducts((current) => [...current, product]);
+          setNewProduct({
+            name: "",
+            sku: "",
+            category: "Electronics",
+            price: "",
+            stock: "",
+          });
+          setShowModal(false);
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to add product:", error);
+        alert("Failed to connect to backend");
+      });
 
     setNewProduct({
       name: "",
