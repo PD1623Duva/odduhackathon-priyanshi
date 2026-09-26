@@ -216,9 +216,49 @@ const adjustStock = async (req, res) => {
 };
 
 
+// Get current inventory
+const getInventory = async (req, res) => {
+    try {
+        const products = await Product.find().sort({ name: 1 });
+
+        res.status(200).json({
+            success: true,
+            products
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
+
+// Get stock ledger
+const getLedger = async (req, res) => {
+    try {
+        const ledger = await StockLedger.find()
+            .populate("product", "name sku category")
+            .sort({ createdAt: -1 });
+
+        res.status(200).json({
+            success: true,
+            ledger
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
+
 module.exports = {
     receiveStock,
     deliverStock,
     transferStock,
-    adjustStock
+    adjustStock,
+    getInventory,
+    getLedger
 };

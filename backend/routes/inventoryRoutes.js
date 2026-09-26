@@ -4,7 +4,9 @@ const {
     receiveStock,
     deliverStock,
     transferStock,
-    adjustStock
+    adjustStock,
+    getInventory,
+    getLedger
 } = require("../controllers/inventoryController");
 
 const router = express.Router();
@@ -20,5 +22,10 @@ router.post("/transfers", transferStock);
 
 // Adjust stock
 router.post("/adjustments", adjustStock);
+// Get current inventory
+router.get("/", getInventory);
+
+// Get stock ledger
+router.get("/ledger", getLedger);
 
 module.exports = router;
