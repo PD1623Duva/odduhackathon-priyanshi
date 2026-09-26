@@ -5,7 +5,7 @@ import Products from "./pages/Products";
 function App() {
   const [currentPage, setCurrentPage] = useState("dashboard");
 
-  const navigate = (page) => {
+  const navigate = (page)=>{
     setCurrentPage(page);
   };
 
