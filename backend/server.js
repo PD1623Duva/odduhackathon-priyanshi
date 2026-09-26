@@ -2,21 +2,21 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+const productRoutes = require("./routes/productRoutes");
+
 const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(express.json());
 
-// Test route
-app.get("/", (req, res) => {
-    res.json({
-        message: "StockSense Backend is running!"
-    });
-});
+// Routes
+app.use("/api/products", productRoutes);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+    tls: true
+})
     .then(() => {
         console.log("MongoDB connected successfully!");
 
