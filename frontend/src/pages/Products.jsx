@@ -7,7 +7,6 @@ function Products({ onNavigate }) {
   const [showModal, setShowModal] = useState(false);
 
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     fetch("http://localhost:5001/api/products")
       .then((res) => res.json())
