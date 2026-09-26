@@ -4,7 +4,6 @@ import "./Dashboard.css";
 function Dashboard({ onNavigate }) {
   return (
     <div className="dashboard">
-
       {/* SIDEBAR */}
       <aside className="sidebar">
         <div className="logo">LOGO</div>
