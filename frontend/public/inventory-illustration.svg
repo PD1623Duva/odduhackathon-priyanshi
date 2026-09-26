@@ -1,0 +1,171 @@
+<svg
+  width="900"
+  height="650"
+  viewBox="0 0 900 650"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background shape -->
+  <path
+    d="M80 180C130 105 240 100 340 130C445 161 500 95 610 135C710 171 790 265 770 380C750 495 650 555 535 535C420 515 350 580 230 545C105 508 20 395 42 285C51 241 61 208 80 180Z"
+    fill="#C7D7E5"
+  />
+
+  <!-- Ceiling lamps -->
+  <path d="M255 35V150" stroke="#183A61" stroke-width="4"/>
+  <path d="M490 35V150" stroke="#183A61" stroke-width="4"/>
+  <path d="M690 35V150" stroke="#183A61" stroke-width="4"/>
+
+  <path
+    d="M225 150C225 124 238 106 255 106C272 106 285 124 285 150H225Z"
+    fill="#183A61"
+  />
+
+  <path
+    d="M460 150C460 124 473 106 490 106C507 106 520 124 520 150H460Z"
+    fill="#183A61"
+  />
+
+  <path
+    d="M660 150C660 124 673 106 690 106C707 106 720 124 720 150H660Z"
+    fill="#183A61"
+  />
+
+  <!-- Light beams -->
+  <path d="M240 150L175 280H335L270 150H240Z" fill="#EEF3F8"/>
+  <path d="M475 150L410 280H570L505 150H475Z" fill="#EEF3F8"/>
+  <path d="M675 150L610 280H770L705 150H675Z" fill="#EEF3F8"/>
+
+  <!-- Monitor -->
+  <rect x="125" y="245" width="400" height="255" rx="14" fill="#183A61"/>
+  <rect x="145" y="265" width="360" height="215" rx="5" fill="#F8FBFD"/>
+
+  <!-- Monitor top bar -->
+  <rect x="145" y="265" width="360" height="36" fill="#63A9D7"/>
+  <circle cx="475" cy="283" r="5" fill="white"/>
+  <circle cx="490" cy="283" r="5" fill="white"/>
+  <circle cx="505" cy="283" r="5" fill="white"/>
+
+  <!-- Dashboard cards -->
+  <rect x="165" y="320" width="85" height="125" rx="5" fill="white"/>
+  <rect x="270" y="320" width="105" height="125" rx="5" fill="white"/>
+  <rect x="395" y="320" width="90" height="125" rx="5" fill="white"/>
+
+  <!-- Checklist -->
+  <rect x="180" y="340" width="18" height="18" rx="4" fill="#4E8FC4"/>
+  <path d="M184 349L189 354L198 343" stroke="white" stroke-width="3"/>
+  <rect x="210" y="342" width="25" height="8" rx="4" fill="#AAB6C1"/>
+
+  <rect x="180" y="375" width="18" height="18" rx="4" fill="#4E8FC4"/>
+  <path d="M184 384L189 389L198 378" stroke="white" stroke-width="3"/>
+  <rect x="210" y="377" width="25" height="8" rx="4" fill="#AAB6C1"/>
+
+  <rect x="180" y="410" width="18" height="18" rx="4" fill="#4E8FC4"/>
+  <path d="M184 419L189 424L198 413" stroke="white" stroke-width="3"/>
+  <rect x="210" y="412" width="25" height="8" rx="4" fill="#AAB6C1"/>
+
+  <!-- Bar chart -->
+  <rect x="420" y="395" width="14" height="35" fill="#75B4E2"/>
+  <rect x="442" y="375" width="14" height="55" fill="#75B4E2"/>
+  <rect x="464" y="350" width="14" height="80" fill="#75B4E2"/>
+
+  <!-- Pie chart -->
+  <circle cx="320" cy="385" r="35" fill="#DDE8F0"/>
+  <path d="M320 385L320 350A35 35 0 01152 0L320 385Z" fill="#72A9D0"/>
+
+  <!-- Shelves -->
+  <rect x="555" y="280" width="250" height="18" rx="3" fill="#183A61"/>
+  <rect x="555" y="420" width="250" height="18" rx="3" fill="#183A61"/>
+
+  <!-- Boxes row 1 -->
+  <rect x="575" y="210" width="85" height="70" rx="4" fill="#C58A4A"/>
+  <rect x="680" y="210" width="85" height="70" rx="4" fill="#C58A4A"/>
+
+  <rect x="585" y="242" width="65" height="20" rx="2" fill="#F6EBDD"/>
+  <rect x="690" y="242" width="65" height="20" rx="2" fill="#F6EBDD"/>
+
+  <path d="M612 210V230H627V210" fill="#A86D36"/>
+  <path d="M717 210V230H732V210" fill="#A86D36"/>
+
+  <!-- Boxes row 2 -->
+  <rect x="575" y="350" width="85" height="70" rx="4" fill="#C58A4A"/>
+  <rect x="680" y="350" width="85" height="70" rx="4" fill="#C58A4A"/>
+
+  <rect x="585" y="382" width="65" height="20" rx="2" fill="#F6EBDD"/>
+  <rect x="690" y="382" width="65" height="20" rx="2" fill="#F6EBDD"/>
+
+  <path d="M612 350V370H627V350" fill="#A86D36"/>
+  <path d="M717 350V370H732V350" fill="#A86D36"/>
+
+  <!-- Floor boxes -->
+  <rect x="395" y="475" width="100" height="85" rx="4" fill="#C58A4A"/>
+  <rect x="505" y="475" width="100" height="85" rx="4" fill="#C58A4A"/>
+  <rect x="615" y="475" width="100" height="85" rx="4" fill="#C58A4A"/>
+
+  <rect x="410" y="515" width="70" height="23" rx="2" fill="#F6EBDD"/>
+  <rect x="520" y="515" width="70" height="23" rx="2" fill="#F6EBDD"/>
+  <rect x="630" y="515" width="70" height="23" rx="2" fill="#F6EBDD"/>
+
+  <path d="M435 475V497H452V475" fill="#A86D36"/>
+  <path d="M545 475V497H562V475" fill="#A86D36"/>
+  <path d="M655 475V497H672V475" fill="#A86D36"/>
+
+  <!-- Person -->
+  <circle cx="125" cy="430" r="25" fill="#C86B3C"/>
+  <path
+    d="M100 455C80 470 77 505 85 540L100 550L112 510L122 550H145L142 495L175 465L158 450L135 468L125 455H100Z"
+    fill="#183A61"
+  />
+
+  <!-- Person arm -->
+  <path
+    d="M135 470L165 435L185 450L153 488"
+    fill="#183A61"
+  />
+
+  <!-- Magnifying glass -->
+  <circle
+    cx="635"
+    cy="445"
+    r="45"
+    stroke="#183A61"
+    stroke-width="8"
+    fill="#EEF3F8"
+  />
+
+  <path
+    d="M668 478L710 520"
+    stroke="#183A61"
+    stroke-width="12"
+    stroke-linecap="round"
+  />
+
+  <!-- Plant -->
+  <path
+    d="M745 525C735 490 740 455 755 430"
+    stroke="#183A61"
+    stroke-width="6"
+  />
+
+  <path
+    d="M750 475C720 455 710 440 715 420C740 425 752 440 750 475Z"
+    fill="#70A66D"
+  />
+
+  <path
+    d="M750 460C775 438 795 435 810 445C795 465 777 470 750 460Z"
+    fill="#70A66D"
+  />
+
+  <path
+    d="M720 525H790L780 575H730L720 525Z"
+    fill="#183A61"
+  />
+
+  <!-- Floor -->
+  <path
+    d="M40 575H820"
+    stroke="#183A61"
+    stroke-width="4"
+  />
+</svg>
